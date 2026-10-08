@@ -16,6 +16,7 @@ body {
     font-family: "Inter", sans-serif;
     background: #050816;
     color: #f5f7ff;
+    font-size: clamp(1.03125rem, calc(1rem + 0.16vw), 1.125rem);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -71,7 +72,7 @@ section {
 }
 
 .nav-container {
-    width: min(1200px, 92%);
+    width: min(1280px, 92%);
     margin: auto;
     display: flex;
     align-items: center;
@@ -103,7 +104,7 @@ section {
     position: relative;
     text-decoration: none;
     color: #aeb7d0;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     transition: all 0.3s ease;
     padding: 8px 0;
@@ -154,7 +155,7 @@ section {
 }
 
 .hero-container {
-    width: min(1200px, 92%);
+    width: min(1280px, 92%);
     margin: auto;
 
     display: grid;
@@ -205,7 +206,7 @@ section {
     border: 1px solid rgba(0, 229, 255, 0.22);
     background: rgba(255, 255, 255, 0.03);
     color: #edf3ff;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.6px;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
@@ -386,9 +387,9 @@ section {
 ========================= */
 
 .section {
-    width: min(1200px, 92%);
+    width: min(1280px, 92%);
     margin: auto;
-    padding: 110px 0;
+    padding: clamp(76px, 8vw, 110px) 0;
 }
 
 .section-heading {
@@ -425,7 +426,7 @@ section {
 
 .about-text p {
     color: #929bb3;
-    font-size: 17px;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
     margin-bottom: 20px;
 }
 
@@ -478,6 +479,7 @@ section {
 
 .info-card p {
     color: #838da6;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
 }
 
 
@@ -530,7 +532,7 @@ section {
 
 .skill-card h3 {
     margin: 0 0 10px;
-    font-size: 20px;
+    font-size: clamp(1.25rem, calc(1.2rem + 0.12vw), 1.375rem);
     color: #ffffff;
     font-weight: 600;
     transition: 0.3s ease;
@@ -543,7 +545,7 @@ section {
 .skill-card p {
     margin: 0;
     color: #8993ac;
-    font-size: 14px;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
     line-height: 1.6;
 }
 
@@ -603,7 +605,7 @@ section {
 
 .skill-box h3 {
     margin: 0 0 18px;
-    font-size: 20px;
+    font-size: clamp(1.25rem, calc(1.2rem + 0.12vw), 1.375rem);
     color: #ffffff;
     font-weight: 600;
     transition: 0.3s ease;
@@ -626,7 +628,7 @@ section {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #cbd5ea;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.2;
     transition: 0.3s ease;
 }
@@ -671,14 +673,8 @@ section {
         padding: 22px 20px;
     }
 
-    .skill-card h3,
-    .skill-box h3 {
-        font-size: 18px;
-    }
-
 }
 
-camme
 /* =========================
    PROJECTS
 ========================= */
@@ -741,7 +737,7 @@ camme
 
 .project-label {
     color: #00e5ff;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 2px;
 }
@@ -753,6 +749,7 @@ camme
 
 .project-card p {
     color: #8993ac;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
     margin-bottom: 20px;
 }
 
@@ -770,7 +767,7 @@ camme
     color: #00e5ff;
     border: 1px solid rgba(0, 229, 255, 0.3);
     border-radius: 8px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     transition: all 0.35s ease;
     overflow: hidden;
@@ -842,12 +839,22 @@ camme
 
     width: 15px;
     height: 15px;
+    box-sizing: border-box;
 
     border-radius: 50%;
+    border: 2px solid transparent;
 
     background: #00e5ff;
 
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.25);
+    background-color: #ffffff;
+    border-color: #00e5ff;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.9), 0 0 40px rgba(0, 229, 255, 0.55);
 }
 
 .timeline-content {
@@ -893,33 +900,37 @@ camme
 
 .timeline-type {
     color: #00e5ff;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
 .timeline-duration {
     color: #707a94;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .timeline-content h3 {
-    font-size: 25px;
+    font-size: clamp(1.625rem, calc(1.55rem + 0.16vw), 1.75rem);
     margin-bottom: 8px;
 }
 
 .timeline-content p {
     color: #8993ac;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
+    line-height: 1.7;
 }
 
 .timeline-content ul {
     margin-top: 15px;
     padding-left: 18px;
     color: #9da6bd;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
+    line-height: 1.7;
 }
 
 .timeline-content li {
-    margin: 5px 0;
+    margin: 7px 0;
 }
 
 
@@ -968,24 +979,27 @@ camme
 
 .education-year {
     color: #00e5ff;
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 800;
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
 .education-card h3 {
-    font-size: 20px;
+    font-size: clamp(1.3125rem, calc(1.28rem + 0.16vw), 1.4375rem);
     margin-bottom: 10px;
 }
 
 .education-card p {
     color: #8993ac;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
+    line-height: 1.7;
     margin-bottom: 15px;
 }
 
 .education-card strong {
     color: #f4f7ff;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
 }
 
 
@@ -994,7 +1008,7 @@ camme
 ========================= */
 
 .contact-section {
-    width: min(1200px, 92%);
+    width: min(1280px, 92%);
     margin: auto;
     padding: 100px 0 130px;
 }
@@ -1020,16 +1034,31 @@ camme
 
     font-size: clamp(36px, 5vw, 65px);
     line-height: 1.1;
+    transition: color 0.35s ease, text-shadow 0.35s ease, filter 0.35s ease, transform 0.35s ease;
 }
 
 .contact-container h2 span {
     color: #00e5ff;
+    transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.contact-container h2:hover {
+    color: #ffffff;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.18), 0 0 32px rgba(0, 229, 255, 0.2);
+    filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.18));
+    transform: translateY(-2px);
+}
+
+.contact-container h2:hover span {
+    color: #00e5ff;
+    text-shadow: 0 0 14px rgba(0, 229, 255, 0.65), 0 0 28px rgba(0, 229, 255, 0.35);
 }
 
 .contact-container>p:not(.small-title) {
     max-width: 600px;
     margin: 20px auto;
     color: #8993ac;
+    font-size: clamp(1.0625rem, calc(1.04rem + 0.18vw), 1.15625rem);
 }
 
 .contact-buttons {
@@ -1038,6 +1067,25 @@ camme
     gap: 12px;
     flex-wrap: wrap;
     margin-top: 30px;
+}
+
+.contact-buttons a {
+    transition: color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease, filter 0.35s ease, transform 0.35s ease;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.contact-buttons a:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+    border-color: rgba(0, 229, 255, 0.55);
+    box-shadow: 0 12px 35px rgba(0, 229, 255, 0.12);
+    color: #00e5ff;
+}
+
+.contact-buttons a:focus-visible {
+    outline: 2px solid #00e5ff;
+    outline-offset: 4px;
 }
 
 
@@ -1051,7 +1099,7 @@ footer {
 }
 
 .footer-container {
-    width: min(1200px, 92%);
+    width: min(1280px, 92%);
     margin: auto;
 
     display: flex;
@@ -1188,7 +1236,7 @@ footer {
     }
 
     .hero-text {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .hero-image img {
@@ -1286,7 +1334,7 @@ footer {
 .contact-details a {
     text-decoration: none;
     color: #8993ac;
-    font-size: 14px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
